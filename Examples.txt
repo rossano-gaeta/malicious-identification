@@ -1,0 +1,41 @@
+######### Terms of use #########
+
+The code is provided for research purposes only and without any warranty. The code implements the op algorithm. 
+When using it in your research work, please cite the following paper:
+
+Rossano Gaeta 
+"An accurate and efficient algorithm to identify malicious nodes of a graph"
+IEEE Transactions on Information Forensics & Security, 2024
+
+For any question, please contact Rossano Gaeta (rossano.gaeta@unito.it).
+
+######### INPUT #########
+
+-g GRAPHFILE
+GRAPHFILE stores the edges of an undirected graph wherein nodes are consecutive integers starting from 0. The format of GRAPHFILE is as follows 
+0 1
+0 2
+... 
+...
+
+It means that node 0 and node 1 are connected, nodes 0 and 2 are connected, and so on. It does not matter if an edge appears more than once since multiple arcs are removed.
+
+-m MALICIOUSFILE
+MALICIOUSFILE consists of one line that includes a set of malicious nodes separated by space. The format of MALICIOUSFILE is as follows
+1 2 4 6 7 8 9 10 ...
+It means that "1 2 4 6 7 8 9 10 ..." are malicious nodes.
+
+-s SEED 
+SEED sets initial value for the random number generator
+
+######### OUTPUT #########
+
+TP 24 : TN 4015 : FP 0 : FN 0 = 4039
+
+a line describing the number of True Positive (TP), True Negative (TN), False Positive (FP), and False Negatives (FN) as well as the total.
+
+######## USAGE #########
+
+Compile: make
+
+Execute: ./op -g graph.txt -m malicious.txt -s 123
